@@ -1,3 +1,8 @@
 <view>
-  <tabs></tabs>
+<!--监听子组件的change事件-->
+  <tabs bind:change="onTabChange"></tabs>
+  <list tabId="{{tabSelectId}}">
+    <view slot="header" class="list-slot"> 这是定义的单一插槽</view>
+    <view slot="footer" class="list-slot"> 这是定义的单2插槽</view>
+  </list>
   </view>

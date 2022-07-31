@@ -4,6 +4,13 @@
     width: 750rpx;
     white-space: nowrap;
     border-bottom: 1px solid #cccccc;
+    /*
+        想让tab固定再顶部
+    */
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background-color: white;
 }
 .tab {
     display: inline-block;

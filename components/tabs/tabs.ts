@@ -13,8 +13,8 @@ Component({
     data: {
         //tabs数据
         listData:[],
+        //记录选中
         active:0,
-        tabData:[{"lable":"1"},{"lable":"2"},{"lable":"3"},{"lable":"4"}]
     },
 
     /**
@@ -23,8 +23,8 @@ Component({
      */
     methods: {
         loadTabsData(){
+            //模拟接收数据
             var jsonData = require("../../data/tabs.data");
-            console.log(jsonData.dataList);
             this.setData({
                 listData:jsonData.dataList,
                 active:0
@@ -47,7 +47,7 @@ Component({
      */
     lifetimes:{
         /**
-         * 绝大多数工作
+         * 绝大多数工作在attached中进行
          */
         attached (){
             this.loadTabsData()
@@ -60,6 +60,10 @@ Component({
         active:function(val){
             const { id } = this.data.listData[val]
             console.log(id)
+            //把id传递给list组件
+            this.triggerEvent('change',{
+                id:id
+            })
         }
     }
 })

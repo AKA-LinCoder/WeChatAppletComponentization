@@ -1,0 +1,9 @@
+<!--components/list/list.wxml-->
+<!--单一插槽-->
+<slot name="header"></slot>
+<scroll-view scroll-y>
+    <view wx:for="{{listData}}" wx:key="index" class="list-item">
+    {{item.title}}
+    </view>
+</scroll-view>
+<slot name="footer"></slot>
